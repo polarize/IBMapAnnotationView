@@ -22,6 +22,8 @@ class IBMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.mapView.delegate = self
+		
         centerMapOnLocation(initialLocation)
 		showAnnotation()
     }
