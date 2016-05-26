@@ -14,6 +14,7 @@
 		C2FF20301CF6D7F0004B82EA /* IBMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF202F1CF6D7F0004B82EA /* IBMapViewController.swift */; };
 		C2FF20321CF6DA80004B82EA /* IBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF20311CF6DA80004B82EA /* IBAnnotation.swift */; };
 		C2FF20341CF6DD63004B82EA /* IBMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF20331CF6DD63004B82EA /* IBMapView.swift */; };
+		C2FF20361CF6EB1E004B82EA /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF20351CF6EB1E004B82EA /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C2FF202F1CF6D7F0004B82EA /* IBMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBMapViewController.swift; sourceTree = "<group>"; };
 		C2FF20311CF6DA80004B82EA /* IBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBAnnotation.swift; sourceTree = "<group>"; };
 		C2FF20331CF6DD63004B82EA /* IBMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBMapView.swift; sourceTree = "<group>"; };
+		C2FF20351CF6EB1E004B82EA /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				C2FF20291CF6D485004B82EA /* Info.plist */,
 				C2FF20311CF6DA80004B82EA /* IBAnnotation.swift */,
 				C2FF20331CF6DD63004B82EA /* IBMapView.swift */,
+				C2FF20351CF6EB1E004B82EA /* CustomAnnotationView.swift */,
 			);
 			path = IBMapAnnotation;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2FF20301CF6D7F0004B82EA /* IBMapViewController.swift in Sources */,
+				C2FF20361CF6EB1E004B82EA /* CustomAnnotationView.swift in Sources */,
 				C2FF201E1CF6D485004B82EA /* AppDelegate.swift in Sources */,
 				C2FF20341CF6DD63004B82EA /* IBMapView.swift in Sources */,
 				C2FF20321CF6DA80004B82EA /* IBAnnotation.swift in Sources */,
