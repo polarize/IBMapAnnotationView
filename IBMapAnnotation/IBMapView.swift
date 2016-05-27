@@ -14,20 +14,50 @@ extension IBMapViewController: MKMapViewDelegate {
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 		if let annotation = annotation as? IBAnnotation {
 			
-			let identifier = "pin"
-			var view: MKPinAnnotationView
-			if let dequeudView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
+			// Try to dequeue an existing pin view first.
+			let identifier = "CustomPinAnnotationView"
+			if let dequeudView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? CustomAnnotationView {
 				dequeudView.annotation = annotation
-				view = dequeudView
-			}else {
-				view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-				view.canShowCallout = true
-				view.calloutOffset = CGPoint(x: -5, y: 5)
-				view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
+				return dequeudView
+			} else {
+				let pinView = CustomAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+				pinView.mapView = mapView
+				pinView.delegate = self
+				pinView.animatesDrop = true
+				pinView.canShowCallout = false
+				return pinView
 			}
-			return view
 		}
 		return nil
 	}
 
+	
+	func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]) {
+		
+		for annot in views {
+			guard let ann = annot.annotation else { return }
+			// Don't pin drop if annotation is user location
+			if ((ann.isKindOfClass(MKUserLocation))) {
+				continue
+			}
+			
+			// Check if current annotation is inside visible map rect, else go to next one
+			let point =  MKMapPointForCoordinate(ann.coordinate);
+			if (!MKMapRectContainsPoint(mapView.visibleMapRect, point)) {
+				continue;
+			}
+		}
+	}
+}
+
+extension IBMapViewController: CustomAnnotationViewDelegate {
+	
+	func getNewMapCenter(newCenterCoords: CGPoint) {
+		
+	}
+	
+	func getNewMapCenterWithCoordinate(coordinate: CLLocationCoordinate2D) {
+		mapView.setCenterCoordinate(coordinate, animated: true)
+	}
+	
 }

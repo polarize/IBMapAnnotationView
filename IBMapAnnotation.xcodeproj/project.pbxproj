@@ -15,6 +15,8 @@
 		C2FF20321CF6DA80004B82EA /* IBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF20311CF6DA80004B82EA /* IBAnnotation.swift */; };
 		C2FF20341CF6DD63004B82EA /* IBMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF20331CF6DD63004B82EA /* IBMapView.swift */; };
 		C2FF20361CF6EB1E004B82EA /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF20351CF6EB1E004B82EA /* CustomAnnotationView.swift */; };
+		C2FF203A1CF70F84004B82EA /* MapDetailsCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FF20391CF70F84004B82EA /* MapDetailsCalloutView.xib */; };
+		C2FF203E1CF71732004B82EA /* MapCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF203D1CF71732004B82EA /* MapCalloutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C2FF20311CF6DA80004B82EA /* IBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBAnnotation.swift; sourceTree = "<group>"; };
 		C2FF20331CF6DD63004B82EA /* IBMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBMapView.swift; sourceTree = "<group>"; };
 		C2FF20351CF6EB1E004B82EA /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		C2FF20391CF70F84004B82EA /* MapDetailsCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapDetailsCalloutView.xib; sourceTree = "<group>"; };
+		C2FF203D1CF71732004B82EA /* MapCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCalloutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		C2FF201C1CF6D485004B82EA /* IBMapAnnotation */ = {
 			isa = PBXGroup;
 			children = (
+				C2FF20391CF70F84004B82EA /* MapDetailsCalloutView.xib */,
 				C2FF201D1CF6D485004B82EA /* AppDelegate.swift */,
 				C2FF202F1CF6D7F0004B82EA /* IBMapViewController.swift */,
 				C2FF20211CF6D485004B82EA /* Main.storyboard */,
@@ -69,6 +74,7 @@
 				C2FF20311CF6DA80004B82EA /* IBAnnotation.swift */,
 				C2FF20331CF6DD63004B82EA /* IBMapView.swift */,
 				C2FF20351CF6EB1E004B82EA /* CustomAnnotationView.swift */,
+				C2FF203D1CF71732004B82EA /* MapCalloutView.swift */,
 			);
 			path = IBMapAnnotation;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 				C2FF20281CF6D485004B82EA /* LaunchScreen.storyboard in Resources */,
 				C2FF20251CF6D485004B82EA /* Assets.xcassets in Resources */,
 				C2FF20231CF6D485004B82EA /* Main.storyboard in Resources */,
+				C2FF203A1CF70F84004B82EA /* MapDetailsCalloutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +155,7 @@
 				C2FF20361CF6EB1E004B82EA /* CustomAnnotationView.swift in Sources */,
 				C2FF201E1CF6D485004B82EA /* AppDelegate.swift in Sources */,
 				C2FF20341CF6DD63004B82EA /* IBMapView.swift in Sources */,
+				C2FF203E1CF71732004B82EA /* MapCalloutView.swift in Sources */,
 				C2FF20321CF6DA80004B82EA /* IBAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +306,7 @@
 				C2FF202E1CF6D485004B82EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Medium</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NQC-h3-Ym1" customClass="MapCalloutView" customModule="IBMapAnnotation" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="108"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcd-So-b5M">
+                    <rect key="frame" x="0.0" y="0.0" width="336" height="95"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zno-So-2He" userLabel="hotelImageElementsContainer">
+                            <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="HotelListMissingHotelImage" translatesAutoresizingMaskIntoConstraints="NO" id="rPj-kq-ilo" userLabel="hotelImagePlaceholder">
+                                    <rect key="frame" x="26" y="13" width="43" height="38"/>
+                                </imageView>
+                                <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KB1-Ro-qac" userLabel="hotelImageActivityIndicator">
+                                    <rect key="frame" x="37" y="35" width="20" height="20"/>
+                                    <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Zur Zeit kein Foto verfügbar." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="86" translatesAutoresizingMaskIntoConstraints="NO" id="Scq-It-Box" userLabel="noPhotoLabel">
+                                    <rect key="frame" x="4" y="59" width="86" height="27"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                    <color key="textColor" white="1" alpha="0.34000000000000002" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1960784495" green="0.29019609089999998" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Noch keine Hotelbewertung vorhanden" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="ZLC-dD-gZo" userLabel="recommendationPlaceholder">
+                            <rect key="frame" x="105" y="67" width="231" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyX-jr-4Da" userLabel="recommendationLabel">
+                            <rect key="frame" x="105" y="67" width="22" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="Dxd-h5-naJ"/>
+                                <constraint firstAttribute="width" constant="22" placeholder="YES" id="bbY-EY-nm7"/>
+                                <constraint firstAttribute="height" constant="21" id="dG0-pG-YKv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weiterempfehlung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88c-BR-zPh" userLabel="furtherRecommendationLabel">
+                            <rect key="frame" x="132" y="67" width="135" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="135" id="0nH-kY-CwU"/>
+                                <constraint firstAttribute="height" constant="21" id="S6u-t8-0jw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ab" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1V-QK-83O" userLabel="fromLabel">
+                            <rect key="frame" x="254" y="24" width="19" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="19" id="gLq-ZO-dPL"/>
+                                <constraint firstAttribute="height" constant="21" id="kX4-O3-4F2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfl-pH-Dxb" userLabel="priceLabel">
+                            <rect key="frame" x="277" y="18" width="30" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="G0L-St-KNp"/>
+                                <constraint firstAttribute="width" constant="30" placeholder="YES" id="jbP-2n-ELT"/>
+                                <constraint firstAttribute="height" constant="26" id="yNC-6i-bAp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                            <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tage p.P." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmu-F1-1WI" userLabel="vacationDaysLabel">
+                            <rect key="frame" x="254" y="41" width="59" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKE-7I-ZzX" userLabel="vacationDaysValueLabel">
+                            <rect key="frame" x="232" y="41" width="19" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-jr-KlC" userLabel="hotelImage">
+                            <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FormFieldArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ui3-sr-eD6">
+                            <rect key="frame" x="317" y="42" width="9" height="14"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0D-1C-6ek" userLabel="hotelName">
+                            <rect key="frame" x="105" y="5" width="224" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" red="0.0078431372550000003" green="0.52156862749999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfR-OF-t7t" userLabel="starRatingView">
+                            <rect key="frame" x="103" y="23" width="78" height="17"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4br-6D-4lk" userLabel="cityName">
+                            <rect key="frame" x="105" y="41" width="130" height="21"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdR-Tq-IIE" userLabel="goToHotelButton">
+                            <rect key="frame" x="0.0" y="4" width="336" height="88"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="hotelDetailsButtonClickAction:" destination="NQC-h3-Ym1" eventType="touchUpInside" id="DY6-BP-r1V"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lyX-jr-4Da" firstAttribute="leading" secondItem="Jcd-So-b5M" secondAttribute="leading" constant="105" id="7xF-M4-6bz"/>
+                        <constraint firstItem="88c-BR-zPh" firstAttribute="leading" secondItem="lyX-jr-4Da" secondAttribute="trailing" constant="5" id="96I-QL-LKL"/>
+                        <constraint firstItem="Sfl-pH-Dxb" firstAttribute="top" secondItem="Jcd-So-b5M" secondAttribute="top" constant="18" id="Ihx-iw-QsC"/>
+                        <constraint firstAttribute="height" constant="95" id="MKt-ZU-pkf"/>
+                        <constraint firstAttribute="width" constant="336" id="WZ4-vI-0HO"/>
+                        <constraint firstItem="lyX-jr-4Da" firstAttribute="top" secondItem="Jcd-So-b5M" secondAttribute="top" constant="67" id="ZZP-VT-bI6"/>
+                        <constraint firstItem="Sfl-pH-Dxb" firstAttribute="leading" secondItem="k1V-QK-83O" secondAttribute="trailing" constant="4" id="bSC-4j-6kR"/>
+                        <constraint firstAttribute="trailing" secondItem="Sfl-pH-Dxb" secondAttribute="trailing" constant="29" id="fUH-3P-6Nj"/>
+                        <constraint firstItem="k1V-QK-83O" firstAttribute="top" secondItem="Jcd-So-b5M" secondAttribute="top" constant="24" id="vfx-sN-622"/>
+                        <constraint firstItem="lyX-jr-4Da" firstAttribute="centerY" secondItem="88c-BR-zPh" secondAttribute="centerY" id="vmc-8A-FkP"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mapCallout" translatesAutoresizingMaskIntoConstraints="NO" id="P41-lO-axS">
+                    <rect key="frame" x="157" y="94" width="21" height="10"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jcd-So-b5M" firstAttribute="top" secondItem="NQC-h3-Ym1" secondAttribute="top" id="Npo-VR-ygm"/>
+                <constraint firstItem="Jcd-So-b5M" firstAttribute="leading" secondItem="NQC-h3-Ym1" secondAttribute="leading" id="Yms-Yv-lSc"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cityName" destination="4br-6D-4lk" id="Aqo-ho-qz9"/>
+                <outlet property="containerView" destination="Jcd-So-b5M" id="1Lu-CE-hv6"/>
+                <outlet property="fromLabel" destination="k1V-QK-83O" id="VxG-yX-TjH"/>
+                <outlet property="furtherRecommendationLabel" destination="88c-BR-zPh" id="IFL-Mu-rEV"/>
+                <outlet property="goToHotelButton" destination="jdR-Tq-IIE" id="fsF-EB-K8r"/>
+                <outlet property="hotelImage" destination="rcn-jr-KlC" id="czR-PI-qfZ"/>
+                <outlet property="hotelImageActivityIndicator" destination="KB1-Ro-qac" id="mRq-fv-ZJN"/>
+                <outlet property="hotelImageElementsContainer" destination="zno-So-2He" id="gFZ-TN-mYF"/>
+                <outlet property="hotelImagePlaceholder" destination="rPj-kq-ilo" id="sUk-15-n46"/>
+                <outlet property="hotelName" destination="K0D-1C-6ek" id="ouV-hp-C7v"/>
+                <outlet property="noPhotoLabel" destination="Scq-It-Box" id="E8u-3v-eKp"/>
+                <outlet property="priceLabel" destination="Sfl-pH-Dxb" id="DAY-y2-aBl"/>
+                <outlet property="recommendationLabel" destination="lyX-jr-4Da" id="NvQ-2F-X2b"/>
+                <outlet property="recommendationPlaceholder" destination="ZLC-dD-gZo" id="e2F-Fs-DOq"/>
+                <outlet property="starRatingView" destination="GfR-OF-t7t" id="Gex-mk-EFk"/>
+                <outlet property="vacationDaysLabel" destination="Xmu-F1-1WI" id="nWP-lB-3QT"/>
+                <outlet property="vacationDaysValueLabel" destination="vKE-7I-ZzX" id="qpV-0F-mJD"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="FormFieldArrow" width="9" height="14"/>
+        <image name="HotelListMissingHotelImage" width="43" height="37"/>
+        <image name="mapCallout" width="43" height="20"/>
+    </resources>
+</document>

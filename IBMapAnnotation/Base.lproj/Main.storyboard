@@ -19,21 +19,34 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wrF-0a-gII">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uI1-vQ-cci" appends="YES" id="fsJ-m0-5yM"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wrF-0a-gII" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="iSw-Pb-gGS"/>
                             <constraint firstAttribute="trailing" secondItem="wrF-0a-gII" secondAttribute="trailing" id="obG-dJ-RU4"/>
                             <constraint firstItem="wrF-0a-gII" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pnq-MZ-8Og"/>
                             <constraint firstItem="wrF-0a-gII" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qiB-1h-9bZ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uI1-vQ-cci" appends="YES" id="jUR-Nq-wCW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="wrF-0a-gII" id="S0e-Wp-Knc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uI1-vQ-cci">
+                    <connections>
+                        <action selector="tappedOnMap:" destination="BYZ-38-t0r" id="iIv-4m-cqj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="305" y="429"/>
         </scene>

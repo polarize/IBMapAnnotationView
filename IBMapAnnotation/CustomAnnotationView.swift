@@ -12,20 +12,26 @@ import MapKit
 protocol CustomAnnotationViewDelegate: class {
 	
 	func getNewMapCenter(newCenterCoords: CGPoint)
+	func getNewMapCenterWithCoordinate(newCenterCoord: CLLocationCoordinate2D)
 }
 
-class CustomAnnotationView: MKPinAnnotationView {
 
+
+class CustomAnnotationView: MKPinAnnotationView {
 	
 	weak var mapView: MKMapView!
 	var  calloutView: UIView!
 	var preventSelectionChange: Bool = false
 	weak var delegate: CustomAnnotationViewDelegate!
+	var mapAnnotationView: MapCalloutView!
 	
-//	@property (nonatomic, weak) id<CustomAnnotationViewDelegate>delegate;
-//	- (void)setAnnotationPositionOnView:(CLLocationCoordinate2D)annCoordonates;
-//	- (void)animateCalloutAppearance;
-
+	
+	override func addSubview(view: UIView) {
+		// Filter the view and allow only our custom subview to be added
+		guard let subView = view as? MapCalloutView else { return }
+		super.addSubview(subView)
+	}
+	
 	func setAnnotationPosistionOnView(annotationCoords: CLLocationCoordinate2D) {
 		
 		guard let mView = mapView else { return }
@@ -87,7 +93,7 @@ class CustomAnnotationView: MKPinAnnotationView {
 		
 		// if it has a callout, check if the touch was made inside the callout
 		if (self.selected) {
-
+			
 			guard let callout = subviews.first else { return false }
 			let isXInsideCallout = (point.x >= callout.frame.origin.x) && (point.x <= (callout.frame.size.width + callout.frame.origin.x));
 			let isYInsideCallout = (point.y >= callout.frame.origin.y) && (point.y <= (callout.frame.size.height + callout.frame.origin.y));
@@ -96,6 +102,56 @@ class CustomAnnotationView: MKPinAnnotationView {
 		}
 		return (isXInsideAnnotation && isYInsideAnnotation) || isInsideCallout;
 	}
+	
+	override func setSelected(selected: Bool, animated: Bool) {
+		
+		if preventSelectionChange { return }
+		
+		super.setSelected(selected, animated: animated)
+		
+		if selected {
+			
+			guard let cView = NSBundle.mainBundle().loadNibNamed("MapDetailsCalloutView", owner: self, options: nil).first as? MapCalloutView else { return }
+			guard let ann = annotation else { return }
+			
+			mapAnnotationView = cView
+			
+			mapAnnotationView.mapview = mapView
+			mapAnnotationView.setupViewWithModel()
+			
+			//Set the pin color to green - selected
+			pinTintColor = UIColor.greenColor()
+			calloutView = mapAnnotationView
+			
+			// Set the callout view frame to appear above the pin
+			let annotationVerticalOffset:CGFloat = 2;
+			let annotationHorizontalOffset:CGFloat = 8;
+			
+			let x = (-(mapAnnotationView.frame.size.width / 2) + annotationHorizontalOffset)
+			
+			let y = -mapAnnotationView.frame.size.height - annotationVerticalOffset
+			
+			calloutView.frame = CGRectMake(x, y, self.calloutView.frame.size.width, self.calloutView.frame.size.height)
+			
+			// Pin will be new mapcenter, so annotation view always will be centered
+			let annotationCoordonate = ann.coordinate
+			
+			delegate?.getNewMapCenterWithCoordinate(annotationCoordonate)
+			
+			addSubview(calloutView)
+			
+		}else {
+			// Set the pin color to red - default - not selected
+			pinTintColor = UIColor.redColor()
+			
+			 // Remove the custom view
+			calloutView.removeFromSuperview()
+			
+			// Deallocate the annotation so it is created again the next time
+			mapAnnotationView = nil
+		}
+	}
+	
 }
 
 
